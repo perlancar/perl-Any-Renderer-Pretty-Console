@@ -1,11 +1,12 @@
 package Any::Renderer::Pretty::Console;
-# ABSTRACT: Render data structures through Data::Format::Pretty::Console
 
-use 5.010;
+use 5.010001;
 use strict;
 use warnings;
 
 use Data::Format::Pretty::Console qw(format_pretty);
+
+# VERSION
 
 sub new {
     my ($class, $format, $options) = @_;
@@ -15,7 +16,6 @@ sub new {
 
 sub render {
     my ($self, $data) = @_;
-    use Data::Dump; dd $self;
     format_pretty($data, $self->{options});
 }
 
@@ -28,7 +28,7 @@ sub available_formats {
 }
 
 1;
-__END__
+# ABSTRACT: Render data structures through Data::Format::Pretty::Console
 
 =head1 SYNOPSIS
 
